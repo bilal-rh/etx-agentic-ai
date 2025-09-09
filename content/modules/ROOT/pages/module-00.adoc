@@ -105,7 +105,7 @@ This setup mirrors how teams work with shared cloud resources in enterprise envi
 Your instructor will provide OpenShift login credentials for your team's shared cluster.
 
 . **Set up your shared repository** (choose one team member to do this):
-.. https://github.com/redhat-ai-services/etx-agentic-ai[Fork the etx-agentic-ai repository,window=_blank] to your personal GitHub account
+.. https://github.com/bilal-rh/etx-agentic-ai[Fork the etx-agentic-ai repository,window=_blank] to your personal GitHub account
 +
 .GitHub Repo Fork
 image::github-fork.png[GitHub Repo Fork, 400]
@@ -669,7 +669,7 @@ cd etx-agentic-ai   # Navigate to root directory of code base if not already the
 +
 [source,bash,options="wrap",role="execute"]
 ----
-sed -i "s/redhat-ai-services/${YOUR_GITHUB_USER}/g" infra/app-of-apps/etx-app-of-apps.yaml
+sed -i "s/bilal-rh/${YOUR_GITHUB_USER}/g" infra/app-of-apps/etx-app-of-apps.yaml
 ----
 
 . Update the `redhat-ai-services` to your GitHub username in the `etx-app-of-apps.yaml` file.
@@ -677,7 +677,7 @@ sed -i "s/redhat-ai-services/${YOUR_GITHUB_USER}/g" infra/app-of-apps/etx-app-of
 [source,bash,options="wrap",role="execute"]
 ----
 for x in $(ls infra/app-of-apps/sno); do
-    sed -i "s/redhat-ai-services/${YOUR_GITHUB_USER}/g" infra/app-of-apps/sno/$x
+    sed -i "s/bilal-rh/${YOUR_GITHUB_USER}/g" infra/app-of-apps/sno/$x
 done
 ----
 
@@ -775,7 +775,7 @@ oc label --overwrite node \
 +
 TIP: If your instance type has different accelerators, you will need to adjust the label used here and the ConfigMap in the next step.
 
-. Now apply the https://github.com/redhat-ai-services/etx-agentic-ai/tree/main/infra/applications/gpu[GPU Cluster Policy and ConfigMap,window=_blank] objects that setup https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/gpu-sharing.html[Time Slicing,window=_blank] - a method to share nvidia gpus.
+. Now apply the https://github.com/bilal-rh/etx-agentic-ai/tree/main/infra/applications/gpu[GPU Cluster Policy and ConfigMap,window=_blank] objects that setup https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/gpu-sharing.html[Time Slicing,window=_blank] - a method to share nvidia gpus.
 +
 [source,bash,options="wrap",role="execute"]
 ----

@@ -42,7 +42,7 @@ Have these ready from your Playground session:
 [source,bash,options="wrap",role="execute"]
 ----
 cd ${HOME}
-git clone https://github.com/redhat-ai-services/etx-agentic-ai.git
+git clone https://github.com/bilal-rh/etx-agentic-ai.git
 cd etx-agentic-ai
 ----
 

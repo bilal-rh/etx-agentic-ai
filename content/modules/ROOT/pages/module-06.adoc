@@ -54,7 +54,7 @@ export YOUR_FORK=https://github.com/${YOUR_GITHUB_USER}/etx-agentic-ai.git
 +
 [source,bash,options="wrap",role="execute"]
 ----
-sed -i "s#https://github.com/redhat-ai-services/etx-agentic-ai.git#${YOUR_FORK}#g" \
+sed -i "s#https://github.com/bilal-rh/etx-agentic-ai.git#${YOUR_FORK}#g" \
   infra/tenants/ai-agent/base/sno/templates/pipeline.yaml
 
 # Use the app's actual endpoint
@@ -66,7 +66,7 @@ sed -i "s#/webhook#/report-failure#g" \
 +
 [source,bash,options="wrap",role="execute"]
 ----
-sed -i "s#https://github.com/redhat-ai-services/etx-agentic-ai.git#${YOUR_FORK}#g" \
+sed -i "s#https://github.com/bilal-rh/etx-agentic-ai.git#${YOUR_FORK}#g" \
   infra/tenants/ai-agent/base/sno/templates/job.yaml
 ----
 
@@ -74,7 +74,7 @@ sed -i "s#https://github.com/redhat-ai-services/etx-agentic-ai.git#${YOUR_FORK}#
 +
 [source,bash,options="wrap",role="execute"]
 ----
-sed -i "s#https://github.com/redhat-ai-services/etx-agentic-ai.git#${YOUR_FORK}#g" code/chart/values.yaml
+sed -i "s#https://github.com/bilal-rh/etx-agentic-ai.git#${YOUR_FORK}#g" code/chart/values.yaml
 sed -i "s#/webhook#/report-failure#g" code/chart/values.yaml
 ----
 

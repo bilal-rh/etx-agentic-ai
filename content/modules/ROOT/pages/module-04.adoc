@@ -26,7 +26,7 @@ It is nice to have a small LLM available locally to validate the default deploym
 
 Since we have a GPU available we can deploy the **models** gitops application which contains a reference deployment of the **granite-31-2b-instruct** model. The same app also deploys out the secrets for the **Models as a Service (MaaS)** that we setup in the bootstrap phase.
 
-. Rename the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/models.yaml.undeploy[**infra/app-of-apps/sno/models.yaml.undeploy**,window=_blank] -> https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/models.yaml[**infra/app-of-apps/sno/models.yaml**,window=_blank]
+. Rename the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/models.yaml.undeploy[**infra/app-of-apps/sno/models.yaml.undeploy**,window=_blank] -> https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/models.yaml[**infra/app-of-apps/sno/models.yaml**,window=_blank]
 + 
 image::models-deploy.png[Models Deploy, 300]
 
@@ -87,7 +87,7 @@ image::models-granite-swagger.png[Models OpenAI, 800]
 + 
 image::models-swagger-v1-models.png[Models OpenAI v1/models, 800]
 
-. To learn more about the model deployment, you can checkout the code here https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/models/base/granite/granite-31-2b-vllm-oci.yaml[**infra/applications/models/base/granite/granite-31-2b-vllm-oci.yaml**,window=_blank]
+. To learn more about the model deployment, you can checkout the code here https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/models/base/granite/granite-31-2b-vllm-oci.yaml[**infra/applications/models/base/granite/granite-31-2b-vllm-oci.yaml**,window=_blank]
 + 
 image::models-deploy-code.png[Models Code, 300]
 
@@ -107,7 +107,7 @@ The Llama Stack K8s Operator is a Kubernetes operator that automates the deploym
 
 == DataScienceCluster Custom Resource
 
-. Rename the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack-operator.yaml.undeploy[**infra/app-of-apps/sno/llama-stack-operator.yaml.undeploy**,window=_blank] -> https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack-operator.yaml[**infra/app-of-apps/sno/llama-stack-operator.yaml**,window=_blank]
+. Rename the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack-operator.yaml.undeploy[**infra/app-of-apps/sno/llama-stack-operator.yaml.undeploy**,window=_blank] -> https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack-operator.yaml[**infra/app-of-apps/sno/llama-stack-operator.yaml**,window=_blank]
 + 
 image::llama-stack-operator-deploy.png[LlamaStack Operator, 300]
 
@@ -154,7 +154,7 @@ spec:
        configMapName: llama-stack-config 
 ----
 
-NOTE: We maintain a https://github.com/eformat/distribution-remote-vllm[build of LlamaStack,window=_blank] that https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/base/llama-stack.yaml#L39[pins the image version,window=_blank] so we can ensure stability whilst the upstream rapidly changes. We expect to use the **rh-dev** distribution once <<Using the DataScienceCluster Resource to configure the LlamaStack Operator>> is resolved.
+NOTE: We maintain a https://github.com/eformat/distribution-remote-vllm[build of LlamaStack,window=_blank] that https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/base/llama-stack.yaml#L39[pins the image version,window=_blank] so we can ensure stability whilst the upstream rapidly changes. We expect to use the **rh-dev** distribution once <<Using the DataScienceCluster Resource to configure the LlamaStack Operator>> is resolved.
 
 == Using ConfigMap for run.yaml Configuration
 
@@ -198,11 +198,11 @@ data:
       port: 8321
 ----
 
-. Rename the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack.yaml.undeploy[**infra/app-of-apps/sno/llama-stack.yaml.undeploy**,window=_blank] -> https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack.yaml[**llama-stack.yaml**,window=_blank]
+. Rename the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack.yaml.undeploy[**infra/app-of-apps/sno/llama-stack.yaml.undeploy**,window=_blank] -> https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack.yaml[**llama-stack.yaml**,window=_blank]
 + 
 image::llama-stack-deploy.png[LlamaStack Deploy, 300]
 
-. Edit the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **basic/** folder
+. Edit the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **basic/** folder
 +
 image::llama-stack-basic.png[LlamaStack Basic, 300]
 +
@@ -350,7 +350,7 @@ data:
       port: 8321
 ----
 
-. Edit the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **basic-model/** folder
+. Edit the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **basic-model/** folder
 +
 image::llama-stack-basic-model.png[LlamaStack Basic Model, 300]
 
@@ -406,7 +406,7 @@ Total models: 1
 
 === LlamaStack User Interface
 
-. LlamaStack comes with a simple UI. Let's deploy it so we can start using our LLM and Web Search tool. Rename the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack-playground.yaml.undeploy[**infra/app-of-apps/sno/llama-stack-playground.yaml.undeploy**,window=_blank] -> https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack-playground.yaml[**llama-stack-playground.yaml**,window=_blank]
+. LlamaStack comes with a simple UI. Let's deploy it so we can start using our LLM and Web Search tool. Rename the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack-playground.yaml.undeploy[**infra/app-of-apps/sno/llama-stack-playground.yaml.undeploy**,window=_blank] -> https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/llama-stack-playground.yaml[**llama-stack-playground.yaml**,window=_blank]
 + 
 image::llama-stack-playground-deploy.png[LlamaStack Deploy, 300]
 
@@ -470,7 +470,7 @@ data:
 ...
 ----
 
-. Edit the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **basic-model/** folder
+. Edit the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **basic-model/** folder
 +
 image::llama-stack-basic-model-agent.png[LlamaStack Basic Model Agent, 300]
 
@@ -599,7 +599,7 @@ data:
       port: 8321
 ----
 
-. Edit the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **maas/** folder
+. Edit the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **maas/** folder
 +
 image::llama-stack-maas.png[LlamaStack MaaS, 300]
 
@@ -625,7 +625,7 @@ image::maas-llama-chat.png[LlamaStack MaaS Models Chat, 300]
 ====
 If one of the MaaS model fails, evaluate the stack trace error. It may be that the vLLM ServingRuntime or InferenceService server has not been correctly configured for tool calling. vLLM needs the correct arguments set to be able to correctly interpret tool calling prompts.
 
-If you check back on the model deployment code for the default model https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/models/base/granite/granite-31-2b-vllm-oci.yaml[**infra/applications/models/base/granite/granite-31-2b-vllm-oci.yaml**,window=_blank] you may notice these arguments to vLLM
+If you check back on the model deployment code for the default model https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/models/base/granite/granite-31-2b-vllm-oci.yaml[**infra/applications/models/base/granite/granite-31-2b-vllm-oci.yaml**,window=_blank] you may notice these arguments to vLLM
 
 [source,yaml,options="wrap"]
 ----
@@ -647,7 +647,7 @@ MCP is an upcoming, popular standard for tool discovery and execution. It is a p
 
 First we need to deploy the pod that runs the https://github.com/containers/kubernetes-mcp-server[**mcp::openshift**,window=_blank] functions. Then we need to configure LlamaStack to use our first MCP tool that interacts with the OpenShift cluster. MCP servers are configured similarly to the tool and toolgroup provider.
 
-. Rename the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/mcp-openshift.yaml.undeploy[**infra/app-of-apps/sno/mcp-openshift.yaml.undeploy**,window=_blank] -> https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/mcp-openshift.yaml[**infra/app-of-apps/sno/mcp-openshift.yaml**,window=_blank]
+. Rename the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/mcp-openshift.yaml.undeploy[**infra/app-of-apps/sno/mcp-openshift.yaml.undeploy**,window=_blank] -> https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/mcp-openshift.yaml[**infra/app-of-apps/sno/mcp-openshift.yaml**,window=_blank]
 + 
 image::mcp-openshift-deploy.png[LlamaStack MCP OpenShift, 300]
 
@@ -669,7 +669,7 @@ image::mcp-openshift-acm.png[LlamaStack Basic ACM, 800]
 +
 image::mcp-openshift-pod.png[LlamaStack Basic Pod, 800]
 
-. Next we need to configure LlamaStack. Open the https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/mcp-openshift/configmap.yaml[**mcp-openshift/configmap.yaml**,window=_blank] overlay and check where we add the tool runtime for MCP
+. Next we need to configure LlamaStack. Open the https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/mcp-openshift/configmap.yaml[**mcp-openshift/configmap.yaml**,window=_blank] overlay and check where we add the tool runtime for MCP
 +
 [source,yaml,options="wrap"]
 ----
@@ -688,7 +688,7 @@ image::mcp-openshift-pod.png[LlamaStack Basic Pod, 800]
       provider_id: model-context-protocol
 ----
 
-. Edit the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **mcp-openshift/** folder
+. Edit the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **mcp-openshift/** folder
 +
 image::llama-stack-mcp-openshift.png[LlamaStack MCP OpenShift, 300]
 
@@ -737,7 +737,7 @@ This works without any parsing errors in the playground OK
 
 The last MCP Server we need to deploy https://github.com/github/github-mcp-server[interacts with GitHub,window=_blank]. The configuration is very similar to MCP OpenShift.
 
-. Rename the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/mcp-github.yaml.undeploy[**infra/app-of-apps/sno/mcp-github.yaml.undeploy**,window=_blank] -> https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/mcp-github.yaml[**infra/app-of-apps/sno/mcp-github.yaml**,window=_blank]
+. Rename the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/mcp-github.yaml.undeploy[**infra/app-of-apps/sno/mcp-github.yaml.undeploy**,window=_blank] -> https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/mcp-github.yaml[**infra/app-of-apps/sno/mcp-github.yaml**,window=_blank]
 + 
 image::mcp-github-deploy.png[LlamaStack MCP GitHub, 300]
 
@@ -770,7 +770,7 @@ image::mcp-github-pod.png[LlamaStack MCP GitHub Pod, 800]
         uri: http://github-mcp-server.agent-demo.svc.cluster.local:80/sse
 ----
 
-. Edit the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **mcp-github/** folder
+. Edit the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **mcp-github/** folder
 +
 image::llama-stack-mcp-github.png[LlamaStack MCP GitHub, 300]
 
@@ -804,7 +804,7 @@ You can see also the response in the pod logs for the mcp::github server in the 
 
 LlamaStack integrates with the Observability stack we deployed as part of the bootstrap. The observability stack has a lot of moving parts. Traces are sent from LlamaStack via OTEL to a Tempo sink endpoint. We can then view traces in OpenShift using the Observe > Traces dashboard.
 
-. To configure telemetry on our LlamaStack server, edit the file https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **sno/** folder. This is the final configuration for our use case.
+. To configure telemetry on our LlamaStack server, edit the file https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/overlay/policy-generator-config.yaml[**infra/applications/llama-stack/overlay/policy-generator-config.yaml**,window=_blank] to point to the **sno/** folder. This is the final configuration for our use case.
 +
 image::llama-stack-sno.png[LlamaStack Telemetry, 300]
 
@@ -951,11 +951,11 @@ image::llama-stack-controller-manager.png[LlamaStack Controller Manager Pod, 800
 ====
 We have left some code that is commented out and undeployed to help you get to the bottom of the ski run. Good Luck 🫡
 
-- https://github.com/redhat-ai-services/etx-agentic-ai/tree/main/infra/applications/milvus[milvus,window=_blank] standalone application
-- https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/app-of-apps/sno/milvus.yaml.undeploy[milvus app-of-apps,window=_blank] undeployed
-- https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/base/configmap.yaml#L105-L113[vector-io,window=_blank] LlamaStack configuration
-- https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/base/configmap.yaml#L95-L96[rag provider,window=_blank] LlamaStack configuration
-- https://github.com/redhat-ai-services/etx-agentic-ai/blob/main/infra/applications/llama-stack/base/configmap.yaml#L125-L126[built-in rag toolgroup,window=_blank] LlamaStack configuration
+- https://github.com/bilal-rh/etx-agentic-ai/tree/main/infra/applications/milvus[milvus,window=_blank] standalone application
+- https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/app-of-apps/sno/milvus.yaml.undeploy[milvus app-of-apps,window=_blank] undeployed
+- https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/base/configmap.yaml#L105-L113[vector-io,window=_blank] LlamaStack configuration
+- https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/base/configmap.yaml#L95-L96[rag provider,window=_blank] LlamaStack configuration
+- https://github.com/bilal-rh/etx-agentic-ai/blob/main/infra/applications/llama-stack/base/configmap.yaml#L125-L126[built-in rag toolgroup,window=_blank] LlamaStack configuration
 - https://docs.redhat.com/en/documentation/red_hat_openshift_ai_cloud_service/1/html/working_with_rag/working-with-llama-stack_rag[Red Hat LlamaStack product documentation,window=_blank]
 - https://github.com/opendatahub-io/llama-stack-demos[RedHat LlamaStack demo,window=_blank] repository from product documentation
 ====

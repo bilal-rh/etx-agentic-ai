@@ -33,7 +33,7 @@ object-templates-raw: |
               requests:
                 nvidia.com/gpu: "1"
             runtime: llama3-2-3b
-            storageUri: oci://quay.io/redhat-ai-services/modelcar-catalog:llama-3.2-3b-instruct
+            storageUri: oci://quay.io/bilal-rh/modelcar-catalog:llama-3.2-3b-instruct
           tolerations:
           - effect: NoSchedule
             key: nvidia.com/gpu
